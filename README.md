@@ -1,9 +1,7 @@
 GhsomWebService
 ===============
 
-// XGhsomService
-// Edited by Jeff Lee
-// 2013.08
+/* XGhsomService Edited by Jeff Lee 2013.08 */
 
 The GhsomService Project is a Ghsom Service frontend Web Program, mainly focus on the Ghsom Service Web Interface part.
 
