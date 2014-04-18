@@ -1,7 +1,7 @@
 GhsomWebService
 ===============
 
-// XGhsomService Edited by Jeff Lee 2013.08 
+// GhsomWebService Edited by Jeff Lee 2013.08 
 
 
 
