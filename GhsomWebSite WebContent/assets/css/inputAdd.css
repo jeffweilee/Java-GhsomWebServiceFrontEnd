@@ -1,0 +1,49 @@
+body {
+	font-size: 30px;
+}
+
+ul li {
+	width: 140px;
+	text-align: center;
+}
+
+#selectedproject {
+	position: absolute;
+	top: 60px;
+	width: 800px;
+	font-size: 25px;
+	color: blue;
+}
+
+#head {
+	font-size: 40px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+#rootwizard {
+	position: absolute;
+	top: 140px;
+	left: 30px;
+	width: 70%;
+}
+
+#pager {
+	width: 300px;
+}
+
+label.valid {
+	width: 24px;
+	height: 24px;
+	background: url(../img/valid.png) center center no-repeat;
+	display: inline-block;
+	text-indent: -9999px;
+}
+
+label.error {
+	font-weight: bold;
+	color: red;
+	padding: 2px 8px;
+	margin-top: 2px;
+}

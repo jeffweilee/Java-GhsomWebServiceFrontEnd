@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/input.css" rel="stylesheet">
+<!--[if lt IE 9]>
+      <script src="//cdnjs.bootcss.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body scrolling="yes"
+	onload="GetInput();GetProjectSelect('projectselect');btnadd();processUrlokBack();">
+	<div class="container-fluid">
+		<div id="main" name="main" class="span9">
+			<div>
+				<div id="project" class="btn btn-large">
+					<font color="#8a8a8a" size="3">Input
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font> <select name="projectselect"
+						id="projectselect"
+						onchange="GetInputByProject($('#projectselect').val());">
+						<!--<option value=""></option>-->
+					</select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button onclick="process();" target="main"
+						class="btn btn-primary btn-large" id="add" disabled="true">Add
+						&raquo;</button>
+				</div>
+			</div>
+
+		</div>
+		<!--/span-->
+	</div>
+	<!--/.container-container-->
+
+	<div id="content" class="table table-bordered">
+		<!--CONTENT-->
+	</div>
+
+	<!-- Placed javascript at the end of the document so the pages load faster -->
+	<script type="text/javascript" src="../assets/js/GetInput.js"></script>
+	<script type="text/javascript" src="../assets/js/GetProjectSelect.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery/jquery.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/bootstrap/bootstrap.js"></script>
+	<script type="text/javascript">
+		function process()
+		{
+			var pid = $('#projectselect').val();
+			var ptext = $('#projectselect option[value=' + pid + ']').text();
+
+			if (pid != "#")
+			{
+				window.location.href = "inputadd.html?ptext=" + ptext + "&" + "pid=" + pid;
+
+			}
+		}
+		function btnadd()
+		{
+			$("#add").attr("disabled", false);
+		}
+		$(document).ready(function()
+		{
+			$('.table').dataTable({
+				"sScrollY" : "200px",
+				"bPaginate" : false
+			});
+		});
+	</script>
+</body>
+</html>

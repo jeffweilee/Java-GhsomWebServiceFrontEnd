@@ -1,0 +1,115 @@
+
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>GHSOM SERVICE Input Add</title>
+
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/inputAdd.css" rel="stylesheet">
+<!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+</head>
+<body onload="processUrl();processUrlokBack();">
+	<form id="contact-form" name="contact-form"
+		action="http://localhost:8080/XGhsomServiceWeb/AddInput" method="post"
+		enctype="multipart/form-data" onsubmit="btnsub();">
+		<div id="head">
+			Add Input
+			<div id="selectedproject" name="selectedproject"></div>
+			<input id="project_Id" name="project_Id" type="hidden"></input>
+		</div>
+
+		<div id="rootwizard">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<ul>
+							<li><a href="#tab1" data-toggle="tab">Step 1</a></li>
+							<li><a href="#tab2" data-toggle="tab">Step 2</a></li>
+							<li><a href="#tab3" data-toggle="tab">Finish</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="bar" class="progress progress-striped active">
+				<div class="bar"></div>
+			</div>
+			<div class="tab-content" id="tab-content">
+				<div class="tab-pane" id="tab1">
+					<br> <br> Input Name:&nbsp; <input id="input_name"
+						name="input_name" type="text"></input> <br> <br> Input
+					Desc:&nbsp;&nbsp; <input id="input_desc" name="input_desc"
+						type="text"></input> <br> <br>
+				</div>
+				<div class="tab-pane" id="tab2">
+					<br> <br>Input File:&nbsp; <input id="input_file_name"
+						name="input_file_name" id="input_file_name" type="file"></input><br>
+					<br> Desc File:&nbsp; <input id="input_file_desc"
+						name="input_file_desc" id="input_file_desc" type="file"></input><br>
+					<br>
+
+				</div>
+				<div class="tab-pane" id="tab3">
+					<br> <br> <font color="red">Process End ! </font><br>
+					<br>
+				</div>
+				
+				<ul class="pager wizard" id="pager">
+					<!-- <li class="previous first"><a href="javascript:;">First</a></li> -->
+					<li class="previous"><a href="javascript:;">Previous</a></li>
+					<!--  <li class="next last"><a href="javascript:;">Last</a></li> -->
+					<li class="next" id="next"><a href="#">Next</a></li>
+					<li class="finish" style="display: none;"
+						onclick="$('#contact-form').submit();" id="sunmit"><a
+						href="javascript:;">Finish</a></li>
+				</ul>
+			</div>
+			<input type="hidden" id="n"></input>
+		</div>
+	</form>
+
+<!-- Alert -->
+	<a id="alert" data-toggle="modal" href="#myModalAlert"></a>
+	<div class="modal fade" id="myModalAlert">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<div class="modal-title" id="alertTitle"></div>
+				</div>
+				<div class="modal-body" id="alertContent"></div>
+			</div>
+		</div>
+	</div>
+<!-- /Alert -->
+	<script type="text/javascript" src="../assets/js/inputAddWizard.js"></script>
+	<script type="text/javascript" src="../assets/js/inputAdd.js"></script>
+	<script type="text/javascript" src="../assets/js/VerifyInputadd.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery/jquery.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/bootstrap/bootstrap.wizard.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/bootstrap/bootstrap.js"></script>
+	<script src="../assets/js/jquery/jquery.validate.js"></script>
+	<script type="text/javascript">
+		function btnsub()
+		{
+			$('#submit').attr('disabled', true);
+		}
+		$("#cancel").click(function btncan()
+		{
+			location.reload();
+		})
+		$(document).ready(function()
+		{
+			inputAdd();
+			inputAddWizard();
+			VerifyInputadd();
+		});
+	</script>
+</body>
+</html>

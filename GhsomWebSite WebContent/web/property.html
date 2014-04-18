@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/property.css" rel="stylesheet">
+<!--[if lt IE 9]>
+      <script src="//cdnjs.bootcss.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body scrolling="yes" onload="GetProperty();">
+	<div class="container-fluid">
+		<div id="main" name="main" class="span9">
+			<div>
+				<div id="project" class="btn btn-large">Property</div>
+			</div>
+
+		</div>
+		<!--/span-->
+	</div>
+	<!--/.container-container-->
+
+	<div id="content" class="table table-bordered">
+		<!--CONTENT-->
+	</div>
+
+	<!--DIV property add====================================-->
+	<!-- Button trigger modal -->
+	<a id="add" data-toggle="modal" href="#myModal"
+		class="btn btn-primary btn-large">Add &raquo;</a>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Add Property</h4>
+				</div>
+
+
+
+
+				<div class="modal-body" id="modal-body">
+					<form action="" id="contact-form" class="form-horizontal"
+						onsubmit="btnsub(); return AddProperty();">
+						<fieldset>
+							<div class="control-group">
+								<label class="control-label" for="name"><h5>Property
+										Name</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="pp_name"
+										id="pp_name">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="desc"><h5>Property
+										Desc</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="pp_desc"
+										id="pp_desc">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>tau_1</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="tau_1" id="tau_1">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>tau_2</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="tau_2" id="tau_2">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>expand_Cycles</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="expand_Cycles"
+										id="expand_Cycles">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>init_Learnrate</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="init_Learnrate"
+										id="init_Learnrate">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>nr</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="nr" id="nr">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>html_Prefix</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="html_Prefix"
+										id="html_Prefix">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>datafile_Extension</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge"
+										name="datafile_Extension" id="datafile_Extension">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>random_Seed</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="random_Seed"
+										id="random_Seed">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>norm_Input_Vectors</h5></label>
+								<div class="controls">
+									<!-- <input type="text" class="input-xlarge"
+										name="norm_Input_Vectors" id="norm_Input_Vectors">-->
+									<select class="select-xlarge" name="norm_Input_Vectors"
+										id="norm_Input_Vectors">
+										<option value="#">Select</option>
+										<option name="NONE" value="NONE">NONE</option>
+										<option name="LENGTH" value="LENGTH">LENGTH</option>
+										<option name="INTERVAL" value="INTERVAL">INTERVAL</option>
+									</select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>init_X_Size</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="init_X_Size"
+										id="init_X_Size">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>init_Y_Size</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="init_Y_Size"
+										id="init_Y_Size">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>labels_Num</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="labels_Num"
+										id="labels_Num">
+								</div>
+							</div>
+							<div class="control-group">
+
+								<div class="controls">
+									<label class="control-label"><h5>labels_Only</h5></label> <input
+										type="checkbox" class="input-xlarge" name="labels_Only"
+										id="labels_Only">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>labels_Threshold</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="labels_Threshold"
+										id="labels_Threshold">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label"><h5>attr_Filter</h5></label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="attr_Filter"
+										id="attr_Filter">
+								</div>
+							</div>
+
+							<div class="form-actions">
+								<button type="submit" class="btn btn-primary btn-large"
+									id="submit">Submit</button>
+								<button type="reset" class="btn btn-large" id="cancel">Cancel</button>
+							</div>
+							<input type="hidden" id="n"></input>
+						</fieldset>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn" data-dismiss="modal">Close</a>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!--end property add====================================-->
+
+	<!-- Placed javascript at the end of the document so the pages load faster -->
+	<script type="text/javascript" src="../assets/js/GetProperty.js"></script>
+	<script type="text/javascript" src="../assets/js/VerifyProperty.js"></script>
+	<script type="text/javascript" src="../assets/js/AddProperty.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery/jquery.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/bootstrap/bootstrap.js"></script>
+	<script type="text/javascript"
+		src="../assets/js/jquery/jquery.validate.js"></script>
+	<script type="text/javascript">
+		function btnsub()
+		{
+			$('#submit').attr('disabled', true);
+		}
+		$("#cancel").click(function btncan()
+		{
+			location.reload();
+		});
+		$("#project").click(function()
+		{
+			location.reload();
+		});
+		$(document).ready(function()
+		{
+			VerifyProperty();
+		});
+	</script>
+</body>
+</html>
