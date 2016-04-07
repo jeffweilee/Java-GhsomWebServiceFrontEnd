@@ -1,10 +1,10 @@
-GhsomWebService
-===============
+# GhsomWebService Web FrontEnd
 
-// GhsomWebService Edited by Jeff Lee 2013.08 
-
-
-
-The GhsomService Project is a Ghsom Service frontend Web Program, mainly focus on the Ghsom Service Web Interface part.
-
-The GhsomService would insert records into mysql which are accessible by backend program doing "The Growing Hierarchical Self-Organizing Map" by creating projects, properties, and adding input files, sessions into database or directory
+## About the Web
+	- A interface to process web sessions properties for backend program to fit GHSOM neural network models
+	- Allow user to create projects by uploading web session properties files into database and to build GHSOM tasks. 
+	
+## About The GHSOM Architecture and Training Process
+	- Refer to [The Growing Hierarchical Self-Organizing Map](http://www.ifs.tuwien.ac.at/~andi/ghsom/)
+	- We input web sessions properties fit GHSOM neural network models and to find out similarity by their feature vector representations. 
+ 
