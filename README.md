@@ -5,6 +5,6 @@
 	- Allow user to create projects by uploading web session properties files into database and to build GHSOM tasks. 
 	
 ## About The GHSOM Architecture and Training Process
-	- Refer to [The Growing Hierarchical Self-Organizing Map](http://www.ifs.tuwien.ac.at/~andi/ghsom/)
+Refer to [The Growing Hierarchical Self-Organizing Map](http://www.ifs.tuwien.ac.at/~andi/ghsom/)
 	- We input web sessions properties fit GHSOM neural network models and to find out similarity by their feature vector representations. 
  
